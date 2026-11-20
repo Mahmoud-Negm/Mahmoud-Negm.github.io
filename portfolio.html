@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Mahmoud Ahmed Mahmoud · Data Analyst & Applied AI Engineer</title>
+<script src="https://cdn.tailwindcss.com/3.4.17"></script>
+<style>
+:root{--bg:#f6f7fb;--bg2:#ffffff;--tx:#0f172a;--mu:#475569;--bd:#e2e8f0;--ac:#0891b2;--ac2:#7c3aed;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#070b14;--bg2:#0f1626;--tx:#e6ebf5;--mu:#93a0b8;--bd:#1d2840;--ac:#22d3ee;--ac2:#a78bfa;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#070b14;--bg2:#0f1626;--tx:#e6ebf5;--mu:#93a0b8;--bd:#1d2840;--ac:#22d3ee;--ac2:#a78bfa;color-scheme:dark}
+html{scroll-behavior:smooth;scroll-padding-top:5rem}
+body{background:var(--bg);color:var(--tx);font-family:Inter,system-ui,-apple-system,Segoe UI,sans-serif;margin:0}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--bg);z-index:60}
+.card{background:var(--bg2);border:1px solid var(--bd);border-radius:1rem}
+.mu{color:var(--mu)}.ac{color:var(--ac)}
+.grad{background:linear-gradient(90deg,var(--ac),var(--ac2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.btn{padding:.7rem 1.3rem;border-radius:.75rem;font-weight:600;transition:.2s;display:inline-block;cursor:pointer}
+.btn-p{background:linear-gradient(90deg,var(--ac),var(--ac2));color:#06101c}
+.btn-p:hover{transform:translateY(-2px);box-shadow:0 8px 30px -8px var(--ac)}
+.btn-s{border:1px solid var(--bd);color:var(--tx)}.btn-s:hover{border-color:var(--ac);color:var(--ac)}
+.chip{border:1px solid var(--bd);border-radius:999px;padding:.3rem .8rem;font-size:.85rem;background:var(--bg)}
+.tab{padding:.45rem 1rem;border-radius:999px;border:1px solid var(--bd);font-size:.9rem;cursor:pointer;transition:.2s}
+.tab[aria-pressed="true"],.tab[aria-selected="true"]{background:var(--ac);color:#06101c;border-color:var(--ac)}
+.pc{transition:.25s}.pc:hover{transform:translateY(-4px);border-color:var(--ac)}
+.glow{position:absolute;width:26rem;height:26rem;border-radius:50%;filter:blur(90px);opacity:.18;animation:fl 9s ease-in-out infinite}
+@keyframes fl{50%{transform:translate(30px,-25px)}}
+.rv{opacity:0;transform:translateY(18px);transition:.7s}.rv.in{opacity:1;transform:none}
+.tl{border-left:2px solid var(--bd);padding-left:1.5rem;position:relative}
+.tl::before{content:"";position:absolute;left:-7px;top:.4rem;width:12px;height:12px;border-radius:50%;background:var(--ac);box-shadow:0 0 12px var(--ac)}
+#dr{position:fixed;inset:0;z-index:70;display:none;background:rgba(2,6,15,.6)}
+#dr.open{display:block}
+#dp{position:absolute;right:0;top:0;bottom:0;width:min(640px,100%);overflow-y:auto;background:var(--bg2);border-left:1px solid var(--bd);padding:1.5rem;animation:sl .3s}
+@keyframes sl{from{transform:translateX(40px);opacity:0}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
+a:focus-visible,button:focus-visible{outline:2px solid var(--ac);outline-offset:2px}
+</style>
+</head>
+<body>
+<header class="fixed top-0 inset-x-0 z-50" style="top:env(safe-area-inset-top,0px);backdrop-filter:blur(12px);background:color-mix(in srgb,var(--bg) 80%,transparent);border-bottom:1px solid var(--bd)">
+<nav class="max-w-6xl mx-auto px-4 h-14 flex items-center justify-between" aria-label="Primary">
+<a href="#home" class="font-bold grad">MA·M</a>
+<div class="hidden md:flex gap-6 text-sm mu" id="links"></div>
+<div class="flex items-center gap-2">
+<button id="th" class="tab" aria-label="Toggle light or dark theme">Theme</button>
+<button id="mb" class="tab md:hidden" aria-label="Menu" aria-expanded="false">Menu</button>
+</div>
+</nav>
+<div id="mm" class="hidden md:hidden px-4 pb-3 flex-col gap-2 text-sm mu"></div>
+</header>
+
+<main>
+<section id="home" class="relative overflow-hidden pt-32 pb-24 px-4">
+<div class="glow" style="background:var(--ac);top:-6rem;left:-6rem"></div>
+<div class="glow" style="background:var(--ac2);bottom:-8rem;right:-6rem;animation-delay:-4s"></div>
+<div class="max-w-6xl mx-auto relative">
+<p class="ac font-medium mb-4">Data Analyst | Applied AI Engineer</p>
+<h1 class="text-4xl sm:text-6xl font-extrabold leading-tight">Mahmoud Ahmed<br><span class="grad">Mahmoud</span></h1>
+<p class="mu text-lg mt-6 max-w-2xl">I build Power BI executive dashboards, evaluate predictive models, and develop interpretable deep-learning workflows. PL-300 certified, trained at the Egyptian Ministry of Justice, and based in Egypt.</p>
+<div class="flex flex-wrap gap-3 mt-8">
+<a href="#projects" class="btn btn-p">View Projects</a>
+<a href="#contact" class="btn btn-s">Contact Me</a>
+<a id="cv" class="btn btn-s" href="#contact">Request CV</a>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-14" id="kpis"></div>
+</div>
+</section>
+
+<section id="about" class="px-4 py-20"><div class="max-w-6xl mx-auto rv">
+<h2 class="text-3xl font-bold mb-6">About <span class="grad">me</span></h2>
+<div class="grid md:grid-cols-3 gap-6">
+<div class="card p-6 md:col-span-2 space-y-4 mu">
+<p>I’m a Data Analyst and Applied AI Engineer who works across two sides of data: business intelligence on one side, machine learning, computer vision, and natural language processing on the other.</p>
+<p>On the analytics side I build executive dashboards in Power BI with DAX, and I prepare data through cleaning, deduplication, and outlier filtering. On the AI side I train and evaluate models with CatBoost, Scikit-learn, TensorFlow, and PyTorch, and I pair them with SHAP and Grad-CAM so results can be explained.</p>
+<p>I hold an Applied AI and Data Analytics Diploma from DIGILIANS and a Bachelor’s degree in Management Information Systems.</p>
+</div>
+<div class="card p-6"><h3 class="font-semibold mb-3">Currently open to</h3>
+<div class="flex flex-wrap gap-2"><span class="chip">Data Analyst</span><span class="chip">BI / SQL Analyst</span><span class="chip">AI Engineer</span><span class="chip">Machine Learning Engineer</span><span class="chip">Deep Learning Engineer</span></div></div>
+</div></div></section>
+
+<section id="skills" class="px-4 py-20"><div class="max-w-6xl mx-auto rv">
+<h2 class="text-3xl font-bold mb-6">Technical <span class="grad">skills</span></h2>
+<div class="flex flex-wrap gap-2 mb-6" role="tablist" id="st"></div>
+<div class="card p-6" id="sp" role="tabpanel" aria-live="polite"></div>
+</div></section>
+
+<section id="experience" class="px-4 py-20"><div class="max-w-6xl mx-auto rv">
+<h2 class="text-3xl font-bold mb-8">Professional <span class="grad">experience</span></h2>
+<div class="tl card p-6">
+<p class="text-sm ac">1.5 months · Egypt</p>
+<h3 class="text-xl font-semibold">Data Analysis & Applied AI Internship / Training</h3>
+<p class="mu mb-3">Egyptian Ministry of Justice · Technical Development & Artificial Intelligence Department</p>
+<ul class="list-disc pl-5 mu space-y-2">
+<li>Contributed to an executive platform for the Minister of Justice focused on AI transformation, interactive analytics, and data-driven decision support.</li>
+<li>Produced a Generative AI film and visual-media presentation for a World Intellectual Property Organization (WIPO) conference.</li>
+</ul>
+<button class="btn btn-s mt-4" data-p="platform">See the platform case study</button>
+</div>
+<div class="tl card p-6 mt-6">
+<p class="text-sm ac">First Cohort · Egypt</p>
+<h3 class="text-xl font-semibold">Applied Artificial Intelligence and Data Analytics Track</h3>
+<p class="mu mb-3">Digital Pioneers Initiative (DIGILIANS) Diploma</p>
+<p class="mu">Accredited by the Military Technical College in cooperation with the Ministry of Communications and Information Technology (MCIT). Diploma projects: End-to-End RAG System, SQL Data Mining, and additional machine-learning and deep-learning projects.</p>
+</div></div></section>
+
+<section id="projects" class="px-4 py-20"><div class="max-w-6xl mx-auto rv">
+<h2 class="text-3xl font-bold mb-6">Project <span class="grad">portfolio</span></h2>
+<div class="flex flex-wrap gap-2 mb-8" id="pf" role="group" aria-label="Project filters"></div>
+<div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5" id="pg"></div>
+</div></section>
+
+<section id="education" class="px-4 py-20"><div class="max-w-6xl mx-auto rv">
+<h2 class="text-3xl font-bold mb-8">Education & <span class="grad">certifications</span></h2>
+<div class="grid md:grid-cols-2 gap-6">
+<div class="space-y-5">
+<div class="tl card p-5"><h3 class="font-semibold">Applied Artificial Intelligence and Data Analytics Diploma (First Cohort)</h3><p class="mu text-sm mt-1">Digital Pioneers Initiative (DIGILIANS). Accredited by the Military Technical College in cooperation with the Ministry of Communications and Information Technology (MCIT).</p></div>
+<div class="tl card p-5"><h3 class="font-semibold">Bachelor’s Degree in Management Information Systems (MIS)</h3><p class="mu text-sm mt-1">Thebes Higher Institute, Faculty of Computers & Information Sciences. Military service: completed.</p></div>
+</div>
+<div class="space-y-4">
+<div class="card p-5"><p class="ac text-sm">Microsoft Certified</p><h3 class="font-semibold">Power BI Data Analyst Associate (PL-300)</h3></div>
+<div class="card p-5"><p class="ac text-sm">Microsoft Certified</p><h3 class="font-semibold">Azure Data Fundamentals (DP-900)</h3></div>
+<div class="card p-5"><p class="ac text-sm">Coursera</p><h3 class="font-semibold">Google Data Analytics Professional Certificate</h3></div>
+<div class="card p-5"><p class="ac text-sm">Coursera · IBM Professional Certificates</p><h3 class="font-semibold">Deep Learning, Artificial Intelligence, Machine Learning, and Data Analysis with Python</h3></div>
+</div></div></div></section>
+
+<section id="contact" class="px-4 py-20"><div class="max-w-6xl mx-auto rv">
+<h2 class="text-3xl font-bold mb-6">Let’s <span class="grad">talk</span></h2>
+<div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+<a class="card p-5 pc block" href="mailto:mahmoudahmed9450@gmail.com?subject=CV%20request"><p class="ac text-sm">Email</p><p class="break-all">mahmoudahmed9450@gmail.com</p></a>
+<a class="card p-5 pc block" href="https://linkedin.com/in/mahmoud-ahmed-mahmoud-negm" target="_blank" rel="noopener"><p class="ac text-sm">LinkedIn</p><p class="break-all">mahmoud-ahmed-mahmoud-negm</p></a>
+<a class="card p-5 pc block" href="https://github.com/Mahmoud-Negm" target="_blank" rel="noopener"><p class="ac text-sm">GitHub</p><p>Mahmoud-Negm</p></a>
+<a class="card p-5 pc block" href="tel:+201110976455"><p class="ac text-sm">Phone</p><p>+20 111 097 6455</p></a>
+</div></div></section>
+</main>
+<footer class="text-center mu text-sm py-10 px-4">Mahmoud Ahmed Mahmoud · Data Analytics · Egypt</footer>
+
+<div id="dr" role="dialog" aria-modal="true" aria-labelledby="dt"><div id="dp"></div></div>
+
+<script>
+const $=(s,r=document)=>r.querySelector(s),$$=(s,r=document)=>[...r.querySelectorAll(s)];
+const nav=[["about","About"],["skills","Skills"],["experience","Experience"],["projects","Projects"],["education","Education"],["contact","Contact"]];
+const navHtml=nav.map(n=>`<a class="hover:text-[var(--ac)]" href="#${n[0]}">${n[1]}</a>`).join("");
+$("#links").innerHTML=navHtml;$("#mm").innerHTML=navHtml;
+$("#mb").onclick=e=>{const m=$("#mm"),o=m.classList.toggle("hidden");e.target.setAttribute("aria-expanded",!o);m.classList.toggle("flex",!o)};
+$$("#mm a").forEach(a=>a.onclick=()=>{$("#mm").classList.add("hidden");$("#mm").classList.remove("flex")});
+
+const root=document.documentElement;
+try{const t=localStorage.getItem("theme");if(t)root.dataset.theme=t;else if(!matchMedia("(prefers-color-scheme: dark)").matches)root.dataset.theme="light"}catch(e){}
+$("#th").onclick=()=>{const n=root.dataset.theme==="dark"?"light":"dark";root.dataset.theme=n;try{localStorage.setItem("theme",n)}catch(e){}};
+
+const kpis=[[2,"","Microsoft certifications"],[6,"","Project entries"],[0.95,"","Top test R² (Manzil, 0.92–0.95)",2],[1.5,"","Months at Ministry of Justice",1]];
+$("#kpis").innerHTML=kpis.map(k=>`<div class="card p-4"><div class="text-3xl font-bold grad" data-n="${k[0]}" data-d="${k[3]||0}">0</div><div class="mu text-sm">${k[2]}</div></div>`).join("");
+function count(el){const n=+el.dataset.n,d=+el.dataset.d,t=1200,s=performance.now();(function f(now){const p=Math.min((now-s)/t,1);el.textContent=(n*p).toFixed(d);if(p<1)requestAnimationFrame(f)})(s)}
+$$("[data-n]").forEach(count);
+
+const skills={"Business Intelligence & Analytics":["Power BI","DAX","Data Modeling","Dashboard Development","KPI Design","EDA","Data Cleaning","Statistical Analysis","Feature Engineering"],"Programming & Data":["Python","SQL","Pandas","NumPy","Scikit-learn","Matplotlib","Seaborn","Relational Databases"],"Machine Learning":["Regression","Classification","CatBoost","LightGBM","Ridge","Lasso","SVM","Model Evaluation","SHAP","MLflow"],"Deep Learning & Computer Vision":["TensorFlow","Keras","PyTorch","CNNs","EfficientNet","Transfer Learning","Autoencoders","Grad-CAM"],"NLP & Generative AI":["NLP","LLMs","Transformers","Generative AI","RAG","Embeddings","Semantic Search","Hybrid Search","Agentic AI (Foundational)"],"Application & Cloud Tools":["Microsoft Azure","Streamlit","FastAPI","NiceGUI","Tkinter","Tableau (Familiar)"]};
+const keys=Object.keys(skills);
+function showSkill(k){$$("#st button").forEach(b=>b.setAttribute("aria-selected",b.dataset.k===k));$("#sp").innerHTML=`<h3 class="font-semibold mb-4">${k}</h3><div class="flex flex-wrap gap-2">${skills[k].map(s=>`<span class="chip">${s}</span>`).join("")}</div>`}
+$("#st").innerHTML=keys.map(k=>`<button class="tab" role="tab" data-k="${k}">${k}</button>`).join("");
+$$("#st button").forEach(b=>b.onclick=()=>showSkill(b.dataset.k));showSkill(keys[0]);
+
+const P=[
+{id:"platform",cat:"gov",tag:"Executive & Government",t:"Minister’s AI Transformation Platform",s:"Egyptian Ministry of Justice · Training",
+ov:"An executive platform for the Minister of Justice centred on AI transformation, interactive analytics, and data-driven decision support. I contributed to it during a 1.5-month data analysis and applied AI training period.",
+pr:"Senior leadership needs analytics it can explore directly to support decisions.",
+so:"An executive-facing platform combining interactive analytics with AI transformation themes. The CV does not document the internal architecture.",
+tools:["Interactive analytics","Applied AI"],
+im:"I contributed to the platform’s analytics and AI transformation work. The CV states my contribution, not the full build.",
+va:"Gives executive decision-makers an interactive, data-driven view to support decisions. No measured outcomes are stated in the CV."},
+{id:"wipo",cat:"gov",tag:"Executive & Government",t:"Generative AI Film for the WIPO Conference",s:"Egyptian Ministry of Justice · Training",
+ov:"A Generative AI film and visual-media presentation produced for a World Intellectual Property Organization (WIPO) conference.",
+pr:"The Ministry needed visual media to present at an international intellectual-property conference.",
+so:"A film and visual-media presentation produced with Generative AI. The CV does not name the specific tools used.",
+tools:["Generative AI","Visual media"],
+im:"I produced the film and presentation as part of my Ministry of Justice training.",
+va:"Delivered conference-ready visual media for an international audience. No audience or reach figures are stated in the CV."},
+{id:"manzil",cat:"bi",tag:"Data Analytics & BI",t:"Manzil · AI-Powered Real Estate Pricing Intelligence",s:"Team project",
+ov:"An Egypt-focused real estate pricing platform. I built its Power BI executive dashboard and contributed to price-prediction modeling.",
+pr:"Property prices in the Egyptian market need to be understood and predicted from data.",
+so:"Data prepared through deduplication and outlier filtering, then a Power BI dashboard with DAX-based KPIs, slicers, and interactive views. CatBoost and Ridge Regression models predict price, explained with SHAP and tracked with MLflow, using separate train, validation, and test sets.",
+tools:["Power BI","DAX","CatBoost","Ridge Regression","SHAP","MLflow"],
+im:"Deduplication and outlier filtering, DAX KPIs and slicers, and experiment tracking with MLflow.",
+va:"Test R-squared of approximately 0.92–0.95, with SHAP explainability for the model’s predictions."},
+{id:"sql",cat:"bi",tag:"Data Analytics & BI",t:"SQL Data Mining",s:"DIGILIANS Diploma project",
+ov:"Analysis of relational datasets using SQL.",
+pr:"Relational data holds patterns that need to be pulled out with queries.",
+so:"SQL joins and aggregations across relational datasets.",
+tools:["SQL","Relational Databases"],
+im:"Joins and aggregations to identify patterns.",
+va:"Data-driven insights derived from the datasets. No metrics are stated in the CV."},
+{id:"casting",cat:"ai",tag:"Applied AI & RAG",t:"Industrial Casting Defect Detection & Localization",s:"Graduation project",
+ov:"An automated visual-inspection pipeline that classifies defects in industrial casting parts.",
+pr:"Manual visual inspection of casting parts needs an automated, explainable alternative.",
+so:"A custom CastingCNN and a fine-tuned EfficientNet-B0 classify defects. Grad-CAM highlights the image regions that influenced each prediction.",
+tools:["CNN","EfficientNet-B0","Grad-CAM","Tkinter","Transfer Learning"],
+im:"Trained models packaged in a Tkinter desktop application for image upload and inspection.",
+va:"Explainable quality-control decisions, since inspectors can see which regions drove a prediction."},
+{id:"news",cat:"ai",tag:"Applied AI & RAG",t:"Arabic News Classification & Hybrid Retrieval",s:"Applied NLP project",
+ov:"Multi-class Arabic news classification (Sports, Culture, and Economy) and a hybrid retrieval pipeline.",
+pr:"Arabic text needs reliable representation for classification and retrieval.",
+so:"TF-IDF features benchmarked against dense multilingual embeddings under consistent classifier settings, plus a hybrid keyword-and-vector retrieval pipeline.",
+tools:["TF-IDF","Multilingual embeddings","Hybrid search","NLP"],
+im:"Corrected Arabic Unicode Presentation Forms normalization issues.",
+va:"Improved semantic representation and retrieval quality for Arabic text."},
+{id:"rag",cat:"ai",tag:"Applied AI & RAG",t:"End-to-End RAG System",s:"DIGILIANS Diploma project",
+ov:"A Retrieval-Augmented Generation pipeline built end to end.",
+pr:"Generated answers need to be grounded in source documents.",
+so:"Document preparation, embeddings, semantic and hybrid search, and context-grounded response generation.",
+tools:["RAG","Embeddings","Semantic Search","Hybrid Search","LLMs"],
+im:"Covers the full pipeline from document preparation to response generation.",
+va:"Context-grounded responses. No metrics are stated in the CV."},
+{id:"ml",cat:"ai",tag:"Applied AI & RAG",t:"Additional ML & Deep Learning Projects",s:"DIGILIANS Diploma projects",
+ov:"Separate machine-learning and deep-learning projects beyond Manzil and the Casting project.",
+pr:"Practice applying models to varied datasets.",
+so:"Model training and evaluation. The CV gives no further detail.",
+tools:["Machine Learning","Deep Learning"],
+im:"Covers model training and evaluation.",
+va:"Broadened hands-on experience across ML and deep learning."}
+];
+const filters=[["all","All Projects"],["ai","Applied AI & RAG"],["bi","Data Analytics & BI"],["gov","Executive & Government Projects"]];
+$("#pf").innerHTML=filters.map((f,i)=>`<button class="tab" data-f="${f[0]}" aria-pressed="${i===0}">${f[1]}</button>`).join("");
+function render(f){$("#pg").innerHTML=P.filter(p=>f==="all"||p.cat===f).map(p=>`<article class="card p-5 pc flex flex-col"><p class="ac text-xs uppercase tracking-wide">${p.tag}</p><h3 class="font-semibold text-lg mt-2">${p.t}</h3><p class="mu text-sm">${p.s}</p><p class="mu text-sm mt-3 flex-1">${p.ov}</p><div class="flex flex-wrap gap-1 mt-3">${p.tools.slice(0,4).map(x=>`<span class="chip">${x}</span>`).join("")}</div><button class="btn btn-s mt-4" data-p="${p.id}">Case Study</button></article>`).join("")}
+render("all");
+$("#pf").onclick=e=>{const b=e.target.closest("button");if(!b)return;$$("#pf button").forEach(x=>x.setAttribute("aria-pressed",x===b));render(b.dataset.f)};
+
+let last=null;
+function open(id){const p=P.find(x=>x.id===id);last=document.activeElement;
+const sec=(h,b)=>`<h3 class="ac font-semibold mt-5 mb-1">${h}</h3><p class="mu">${b}</p>`;
+$("#dp").innerHTML=`<button class="tab float-right" id="cl" aria-label="Close case study">Close</button><p class="ac text-sm">${p.tag}</p><h2 id="dt" class="text-2xl font-bold mt-1">${p.t}</h2><p class="mu text-sm">${p.s}</p>${sec("Project Overview",p.ov)}${sec("Problem Statement",p.pr)}${sec("Solution & Technical Architecture",p.so)}<h3 class="ac font-semibold mt-5 mb-2">Tools & Technologies</h3><div class="flex flex-wrap gap-2">${p.tools.map(x=>`<span class="chip">${x}</span>`).join("")}</div>${sec("Implementation Details",p.im)}${sec("Business Value & Impact",p.va)}`;
+$("#dr").classList.add("open");document.body.style.overflow="hidden";$("#cl").focus();$("#cl").onclick=close}
+function close(){$("#dr").classList.remove("open");document.body.style.overflow="";if(last)last.focus()}
+document.addEventListener("click",e=>{const b=e.target.closest("[data-p]");if(b)open(b.dataset.p);if(e.target.id==="dr")close()});
+document.addEventListener("keydown",e=>{if(e.key==="Escape"&&$("#dr").classList.contains("open"))close()});
+
+const io=new IntersectionObserver(es=>es.forEach(x=>{if(x.isIntersecting){x.target.classList.add("in");io.unobserve(x.target)}}),{threshold:.1});
+$$(".rv").forEach(x=>io.observe(x));
+</script>
+</body>
+</html>
